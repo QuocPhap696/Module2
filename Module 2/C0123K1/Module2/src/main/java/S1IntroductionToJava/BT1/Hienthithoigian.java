@@ -1,7 +1,10 @@
 package S1IntroductionToJava.BT1;
 
+import java.util.Date;
+
 public class Hienthithoigian {
     public static void main(String[] args) {
-        System.out.println("welcome to Jave");
+        Date now = new Date();
+        System.out.println(now);
     }
 }
