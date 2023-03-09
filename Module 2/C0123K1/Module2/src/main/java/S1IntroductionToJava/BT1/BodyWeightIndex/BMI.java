@@ -24,8 +24,6 @@ public class BMI {
         } else {
             System.out.printf("%-20.2f%s", bmi, "Obese");
         }
-
-
     }
 }
 
