@@ -1,0 +1,50 @@
+10 / 03 / 2023
+Khai báo mảng: 
+ ví dụ => int [] numbers = new int[5];		// khởi tạo 1 mảng gồm 5 phần tử với giá trị mặt định là 0
+	 int[] numbers = {1, 7, 5, 1}; 		// khai báo nhanh 1 mảng
+	 Độ dài mảng, numbers[i]
+Truyền tham trị và tham chiếu
+Các kiểu dữ liệu mặc định
+
+Bài tập 
+BT1: Tính tổng các giá trị trong mảng
+BT2: Đếm xem mảng có bao nhiêu số chẵn
+BT3: Tìm giá trị nhỏ nhất của mảng
+BT4: Thêm phần tử vào mảng
+BT5: Xóa phần tử khỏi mảng
+BT6: Gộp 2 mảng a, b lại với nhau
+
+Lớp Wrapper trong java:
+Định nghĩa: Cung cấp cơ chế để chuyển kiểu dữ liệu nguyên thuỷ thành kiểu đối tượng và từ đối tượng thành kiểu dữ liệu nguyên thuỷ.
+Tính năng autoboxing và unboxing chuyển đổi kiểu dữ liệu nguyên thuỷ thành kiểu đối tượng và từ đối tượng thành kiểu dữ liệu nguyên thuỷ một cách tự động.
+Kiểu dữ liệu nguyên thuỷ => kiểu đối tượng : autoboxing. và ngược lại (unboxing).
+
+Kiểu nguyên thuỷ                Kiểu đổi tượng
+ boolean                             Boolean
+ char                                Character
+ byte                                Byte
+ short                               Short
+ int                                 Int
+ long                                Long
+ float                               Float
+ double                              Double    
+
+Ví Dụ: chuyển kiểu dữ liệu nguyên thuỷ thành kiểu Wrapper.
+ public class WrapperExample1 {
+	public static void main(String args[]) {
+	//Đổi int thành Integer
+	int a = 20;
+	Integer i = Integer.valueOf(a); // Đổi int thành Interger
+	Integer j = a; // autoboxing, tự động đổi int thành Integer trong nội trình phiên dịch.
+	
+	System.out.println(a + " " + i + " " + j)
+}
+}
+OUTPUT : 20 20 20
+
+Kiểu tham chiếu và tham trị trong Java.
++ Truyền tham chiếu : khi gọi một phương thức và truyền một tham chiếu cho phương thức.
+		     Việc thay đổi giá trị của biến tham chiếu bên trong phương thức làm thay đổi giá trị của nó
+		     Dành cho các tham số có kiểu dữ liệu nguyên thuỷ là byte, short, int, long, float, doune, boolean, char.
++ Truyền tham trị   : khi gọi một phương thức và truyền một giá trị cho phương thức.
+		     Việc thay đổi giá trị chỉ có hiệu lực trong phương thức được gọi, ko có hiệu lực bên ngoài  
