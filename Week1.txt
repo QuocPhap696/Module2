@@ -48,3 +48,6 @@ Kiểu tham chiếu và tham trị trong Java.
 		     Dành cho các tham số có kiểu dữ liệu nguyên thuỷ là byte, short, int, long, float, doune, boolean, char.
 + Truyền tham trị   : khi gọi một phương thức và truyền một giá trị cho phương thức.
 		     Việc thay đổi giá trị chỉ có hiệu lực trong phương thức được gọi, ko có hiệu lực bên ngoài  
+		     
+#13 / 03 / 2023
+Print format trong java
