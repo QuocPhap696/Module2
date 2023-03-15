@@ -1,4 +1,4 @@
-package CheckLeapYear;
+package S1IntroductionToJava.BT1.CheckLeapYear;
 
 import java.util.Scanner;
 
