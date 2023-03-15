@@ -1,0 +1,201 @@
+10 / 03 / 2023
+Khai báo mảng: 
+ ví dụ => int [] numbers = new int[5];		// khởi tạo 1 mảng gồm 5 phần tử với giá trị mặt định là 0
+	 int[] numbers = {1, 7, 5, 1}; 		// khai báo nhanh 1 mảng
+	 Độ dài mảng, numbers[i]
+Truyền tham trị và tham chiếu
+Các kiểu dữ liệu mặc định
+
+Bài tập 
+BT1: Tính tổng các giá trị trong mảng
+BT2: Đếm xem mảng có bao nhiêu số chẵn
+BT3: Tìm giá trị nhỏ nhất của mảng
+BT4: Thêm phần tử vào mảng
+BT5: Xóa phần tử khỏi mảng
+BT6: Gộp 2 mảng a, b lại với nhau
+
+Lớp Wrapper trong java:
+Định nghĩa: Cung cấp cơ chế để chuyển kiểu dữ liệu nguyên thuỷ thành kiểu đối tượng và từ đối tượng thành kiểu dữ liệu nguyên thuỷ.
+Tính năng autoboxing và unboxing chuyển đổi kiểu dữ liệu nguyên thuỷ thành kiểu đối tượng và từ đối tượng thành kiểu dữ liệu nguyên thuỷ một cách tự động.
+Kiểu dữ liệu nguyên thuỷ => kiểu đối tượng : autoboxing. và ngược lại (unboxing).
+
+Kiểu nguyên thuỷ                Kiểu đổi tượng
+ boolean                             Boolean
+ char                                Character
+ byte                                Byte
+ short                               Short
+ int                                 Int
+ long                                Long
+ float                               Float
+ double                              Double    
+
+Ví Dụ: chuyển kiểu dữ liệu nguyên thuỷ thành kiểu Wrapper.
+ public class WrapperExample1 {
+	public static void main(String args[]) {
+	//Đổi int thành Integer
+	int a = 20;
+	Integer i = Integer.valueOf(a); // Đổi int thành Interger
+	Integer j = a; // autoboxing, tự động đổi int thành Integer trong nội trình phiên dịch.
+	
+	System.out.println(a + " " + i + " " + j)
+}
+}
+OUTPUT : 20 20 20
+
+Kiểu tham chiếu và tham trị trong Java.
++ Truyền tham chiếu : khi gọi một phương thức và truyền một tham chiếu cho phương thức.
+		     Việc thay đổi giá trị của biến tham chiếu bên trong phương thức làm thay đổi giá trị của nó
+		     Dành cho các tham số có kiểu dữ liệu nguyên thuỷ là byte, short, int, long, float, doune, boolean, char.
++ Truyền tham trị   : khi gọi một phương thức và truyền một giá trị cho phương thức.
+		     Việc thay đổi giá trị chỉ có hiệu lực trong phương thức được gọi, ko có hiệu lực bên ngoài  
+
+#13 - 03 / 2023
+
+Print format trong java
+Printf vừa in ra màn hình, vừa định dạng những thứ mà nó đã in ra từ chuỗi đến số, ngày giờ và cả đối tượng.
+VD: System.out.printf("%s\n%s", "Tôi yêu lập trình", "Thích Java và uống cf")
+
+Các bộ định dạng có sẵn trong Printf:
+%c : Ký tự
+%d : Số thập phân (số nguyên) (Cơ số 10)
+%e : Dấu phẩy động theo cấp số nhân
+%f : Dấu phẩy động
+%i : Số nguyên (Cơ số 10)
+%o : Số bát phân (cơ số 8)
+%s : Chuỗi
+%u : Số thập phân (số nguyên) không dấu
+%t : Định dạng ngày/ giờ
+%% : Dấu phần trăm
+\% : Dấu phần trăm
+Tuy nhiên thì print và println vẫn nhanh hơn và phổ biến hơn trong các trường hợp dữ liệu không cần định dạng phức tạp.
+
+OOP : Là lập trình hướng đối tượng
+Lớp(class) là khuôn mẫu định nghĩa các thuộc tính và hành vi.
+Thuộc tính: + private(che dấu dữ liệu, Chỉ có thể truy cập ở bên trong class), 
+	   + public(công khai), 
+	   + protected (Chỉ có thể truy cập ở bên trong class và các class kế thừa từ class đó,
+	   + default. 
+Các phương thức thể hiện hành vi : getter lấy giá trị thuộc tính 
+					+ Thuộc tính kiểu bool : isTênthuộctính()
+					+ Thuộc tính kiểu khác : getTênthuộctính()
+                   		 setter thay đổi thuộc tính.
+					+setTênthuộctính([Thamsố]) 
+Cú pháp khai báo PThức
+[PThuc (public..)] Kiểudữliệu tênPhươngThức [Tham số]
+
+Phương Thức Khởi Tạo (contrustor): là PT đầu tiên được gọi khi bạn tạo đối tượng (tên PThuc phải trùng tên lớp, Không có kiểu dữ liệu trả về)
+Cú pháp : Kiểudữliệu tênThuộcTính;
+VD: public class PhanSo {
+	private int tuSo;
+	private int mauSo;
+      public PhanSo(){
+	tuSo =0;
+	mauSo =1;	
+    } => không có kiểu dữ liệu trả về, PThuc khởi tạo không tham số.
+
+VD2 : public PhanSo(int tu, int mau){
+	tuSo = tu;
+	mauSO = mau;
+ }
+} => Pthuc khởi tạo có 2 tham số    
+
+New: trong java là một từ khoá (keyword). ko được đặt tên hàm, thực, biến hay bất cứ thừ gì trùng từ khoá new.
+Cấp phát cho vùng nhớ đối tượng hay nói cách khác là khởi tạo đối tượng và có thể lôi đối tượng ra sử dụng khi cần.
+
+Demo:
+     public class student {
+	public String id;
+	public String name;
+	public String grade;  //lớp
+	public int age;
+	public float avgMark;  //điểmtrungbình
+	public String email;
+
+	public void study (String subject)     {
+	}
+	public void payee (float amount)       { //đónghọcphí
+	}
+	public void doHomework(String subject) {
+	}
+
+=> có 2 thành phần: dữ liệu và hành vi
+
+### 14 / 03 ###
+* Biến static trong Java : Từ khoá static được sử dụng để khai báo các thuộc tính và phương thức của lớp(khác với thuộc tính và phương thức của đối tượng)
+Không cần khởi tạo đối tượng vẫn có thể sử dụng các thành phần static.
++ Thuộc tính tĩnh và Pthuc tĩnh dùng chung cho tất cả đối tượng lớp.
++ Được gọi sử dụng thông qua tên lớp mà không cần tạo đối tượng.
++ Trong pthuc static chỉ có thể gọi các phương thức static khác.
++ Trong pthuc static chỉ có thể truy xuất các biến static.
++ Không thể sử dụng từ khoá thí hoặc super.
+
+Ví dụ:
+class PhanSo {
+	private static int soLuongPs = 0;
+	private static int timSolon (int a, int b) {
+	// ...
+}
+}
+//Ta gọi phương thức timSolon bằng cách
+	int  SoLon = PhanSo.timSolon(12,8);
+* Nested class (lớp lồng nhau) là một lớp được khai báo trên lớp khác.
+VD: class OuterClass {
+	class InnerClass {
+	... implement something ...
+	}	
+     }
+Nested class chia thành 2 loại: static nested classes và non-static nested classes.
++ Static Nested Classes: là class được khai báo dạng static bên trong 1 class khác.
+VD: class OuterClass {
+	class StaticInnerClass {
+	... implment something...
+	   }
+	}
++ Non-static Nested Classes : bao gồm Inner classes, Local classes và Anonymous Classes.
+   - Inner Classes : là khai báo 1 class không phải dạng static bên trong 1 class khác.
+   - Local classes :  là khai báo 1 class bên trong 1 method khác.
+   - Anonymous Classes : khai báo bên trong class hoặc method mà ko có tên cụ thể.
+* Biến trong Java : Local, instance, static.
+Cú pháp: DataType varName [ = value] [, varName2] [= value2]...;
+ #trong đó: DataType là kiểu dữ liệu của biến, varName là tên biến.
+
+Quy tắc đặt tên : Bắt đầu từ ký tự chữ, gạch dưới, ký tự dollar $
+		 Tên biến không chứa khoảng trắng
+		 Bắt đầu từ ký tự thứ 2 có thể dùng chữ, gạch dưới, dollar $
+		 Không được trùng các từ khoá
+		 Có phân biệt chữ hoa chữ thường.
+VD:  package vn.viettuts.bienvadulieu;
+     public class Bien {
+	public static float PI = 3.14f; // đây là biến static
+	int n ;			      // đây là biến instance
+	public Bien() {
+	     char c = 'c';
+	}
+     }
++ Biến Local : được khai báo trong các phương thức, hàm constructor hoặc trong các block
+	        được tạo bên trong các phương thức, hàm constructor hoặc trong các block và bị huỷ khi kết thúc các pthuc
+		Không được sử dụng "access modifier" khi khai báo biến local.
+		Các biến local được lưu trên vùng nhớ stack của bộ nhớ.
+		Bạn cần khởi tạo giá trị mặc định cho biến local trước khi có thể sử dụng.
+vd: package vn.viettuts.bienvadulieu;
+    public class Bien {
+     
+    public void sayHello() {
+        int n = 10;                     // Đây là biến local
+        System.out.println("Gia tri cua n la: " + n);
+    }
+     
+    public static void main(String[] args) {
+        Bien bienLocal = new Bien();
+        bienLocal.sayHello();
+    }
+}
++ Biến instancae(biến toàn cục) : khai báo trong một class,bên ngoài phthuc, constructor
+				được tạo khi một đối tượng được tạo bằng việc sử dụng từ khoá "new"
+				có thể sử dụng các phương thức, constructor, block..
++ Biến static : được khai báo trong 1 class với từ khoá "static", bên ngoài các phthuc, constructor và block
+		được tạo khi chương trình bắt đầu chạy và chỉ bị phá huỷ khi chương trình dừng lại
+* Phân biệt Private, Public, Protectd
+	+ Private : phạm vi truy cập của biến chỉ ở trong class, có phạm vi truy cập hạn chế nhất.
+	+ protected : Phạm vi truy cập là trong 1 packged,(và bên ngoài package nhưng chỉ thông qua tính kế thừa)Biê
+	+ Public : kiểu dữ liệu khai báo thuộc loại công cộng, ở đâu cũng dùng được
