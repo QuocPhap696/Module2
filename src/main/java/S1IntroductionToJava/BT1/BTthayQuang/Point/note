@@ -1,0 +1,11 @@
+Note cách debug
+
+/------ ra cái gì
+String toado = "(2,3)";
+
+int indexLast = toado.lastIndexOf(")");
+String data = toado.substring(1, indexLast);
+
+String [] items = data.split(",");
+
+System.out.println(Arrays.toString(items));
