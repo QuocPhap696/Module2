@@ -70,5 +70,153 @@ VD :  public interface Flyable {
 			Có thể định nghĩa hoặc không thân phương thức, property.
 			Có thể xác định modifier
 
+### 20 / 03 ### 
+
+Comparable và Comparator : cả 2 đều là các giao diện và có thể sử dụng để sắp xếp các phần tử collection.
+			  đều dùng để so sánh giá trị và java dựa vào đó để scp tăng hay giảm dần.
+ * Khác nhau :
+ Comparable : + PHẢI implements(thực hiện) giao tiếp Comparable cho lớp đối tượng cần được so sánh.
+	     + Comparable cung cấp phương thức compareTo() để sxep các phần tử.
+	     + thuộc về java.lang package
+	     + có thể step các phần tử của kiểu Comparable bởi pthuc Collections.sort(List)
+	     + Pthuc compareTo() sử dụng để so sánh đối tượng hiện tại đối với đối tượng được chỉ định.
+
+ Comparator : + KHÔNG cần phải implements giao tiếp Comparator cho lớp đối tượng cần so sánh.
+	      + cung cấp phương thức compare() để sắp xếp các phần tử.
+	      + thuộc về java.util package
+	      + có thể sắp xếp các phần tử của kiểu Comparator bởi pthuc Collection.sort(List, Comparator)
+	      + chứa 2 pthuc là compare(Object obj1, Object obj2) và equals(Object element)
+	     
+
+VD :  Comparable :
+
+public class ComparableExample {
+    public static void main(String[] args) {
+        // create student list
+        List<Student> studentList = new ArrayList<>();
+        studentList.add(new Student(1,"Linh",24, 8.22));
+        studentList.add(new Student(2,"Nguyen",21, 8.44));
+        studentList.add(new Student(3,"Thu",22, 7.84));
+        studentList.add(new Student(4,"Phuong Anh",22, 7.03));
+        // sort student list
+        Collections.sort(studentList);
+        // show student list
+        for (Student student : studentList){
+            System.out.println(student.toString());
+        }
+    }
+}
+	Comparator : 
+
+public class ComparatorExample {
+    public static void main(String[] args) {
+        // create student list
+        List <Student> studentList = new ArrayList<>();
+        studentList.add(new Student(1,"Linh",24, 8.22));
+        studentList.add(new Student(2,"Nguyen",21, 8.44));
+        studentList.add(new Student(3,"Thu",22, 7.84));
+        studentList.add(new Student(4,"Phuong Anh",22, 7.03));
+        // sort student list by GPA
+        Collections.sort(studentList, new Comparator<Student>() {
+            @Override
+            public int compare(Student o1, Student o2) {
+                return o1.getName().compareTo(o2.getName());
+            }
+        });
+// show student  list
+        for (Student student : studentList){
+            System.out.println(student.toString());
+        }
+        System.out.println();
+
+        // sort student list by ID
+        Collections.sort(studentList, new Comparator<Student>() {
+            @Override
+            public int compare(Student o1, Student o2) {
+                return o2.getID() - o1.getID();
+            }
+        });
+        // show student list
+        for (Student student : studentList){
+            System.out.println(student.toString());
+        }
+
+    }
+}
+### 20 / 03 ###
+
+Comparable và Comparator : cả 2 đều là các giao diện và có thể sử dụng để sắp xếp các phần tử collection.
+			  đều dùng để so sánh giá trị và java dựa vào đó để scp tăng hay giảm dần.
+ * Khác nhau :
+ Comparable : + PHẢI implements(thực hiện) giao tiếp Comparable cho lớp đối tượng cần được so sánh.
+	     + Comparable cung cấp phương thức compareTo() để sxep các phần tử.
+	     + thuộc về java.lang package
+	     + có thể step các phần tử của kiểu Comparable bởi pthuc Collections.sort(List)
+	     + Pthuc compareTo() sử dụng để so sánh đối tượng hiện tại đối với đối tượng được chỉ định.
+
+ Comparator : + KHÔNG cần phải implements giao tiếp Comparator cho lớp đối tượng cần so sánh.
+	      + cung cấp phương thức compare() để sắp xếp các phần tử.
+	      + thuộc về java.util package
+	      + có thể sắp xếp các phần tử của kiểu Comparator bởi pthuc Collection.sort(List, Comparator)
+	      + chứa 2 pthuc là compare(Object obj1, Object obj2) và equals(Object element)
+
+
+VD :  Comparable :
+
+public class ComparableExample {
+    public static void main(String[] args) {
+        // create student list
+        List<Student> studentList = new ArrayList<>();
+        studentList.add(new Student(1,"Linh",24, 8.22));
+        studentList.add(new Student(2,"Nguyen",21, 8.44));
+        studentList.add(new Student(3,"Thu",22, 7.84));
+        studentList.add(new Student(4,"Phuong Anh",22, 7.03));
+        // sort student list
+        Collections.sort(studentList);
+        // show student list
+        for (Student student : studentList){
+            System.out.println(student.toString());
+        }
+    }
+}
+	Comparator :
+
+public class ComparatorExample {
+    public static void main(String[] args) {
+        // create student list
+        List <Student> studentList = new ArrayList<>();
+        studentList.add(new Student(1,"Linh",24, 8.22));
+        studentList.add(new Student(2,"Nguyen",21, 8.44));
+        studentList.add(new Student(3,"Thu",22, 7.84));
+        studentList.add(new Student(4,"Phuong Anh",22, 7.03));
+        // sort student list by GPA
+        Collections.sort(studentList, new Comparator<Student>() {
+            @Override
+            public int compare(Student o1, Student o2) {
+                return o1.getName().compareTo(o2.getName());
+            }
+        });
+// show student  list
+        for (Student student : studentList){
+            System.out.println(student.toString());
+        }
+        System.out.println();
+
+        // sort student list by ID
+        Collections.sort(studentList, new Comparator<Student>() {
+            @Override
+            public int compare(Student o1, Student o2) {
+                return o2.getID() - o1.getID();
+            }
+        });
+        // show student list
+        for (Student student : studentList){
+            System.out.println(student.toString());
+        }
+
+    }
+}
+
+
 
 
