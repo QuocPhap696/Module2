@@ -160,7 +160,8 @@ Comparable và Comparator : cả 2 đều là các giao diện và có thể s�
 	      + có thể sắp xếp các phần tử của kiểu Comparator bởi pthuc Collection.sort(List, Comparator)
 	      + chứa 2 pthuc là compare(Object obj1, Object obj2) và equals(Object element)
 
-
+=> comparator(rất linh động) : có thể sử bất kì đối tượng nào(có thể so sánh theo id, theo tên ...
+                                                              mà ko phải đụng chạm đến class)
 VD :  Comparable :
 
 public class ComparableExample {
