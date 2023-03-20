@@ -1,0 +1,74 @@
+### 16 / 03 ###
+* Vì sao java không cho kế thừa : java không hỗ trợ đa kế thừa. Đa kế thừa dẫn đến "diamond problem"
+	"diamond problem" : vấn đề này xảy ra khi 2 lớp cha của một lớp có 1 cơ sở chung
+
+Person  => Student  => TA  *Lớp TA nhận được 2 bản sao của tất cả các thuộc tính của lớp Person
+        => Faculty
+ *Java hỗ trợ 1 phần nào đó đa kế thừa bằng các interface.
+
+* Lớp Abstract Class : nghĩa là 1 lớp trừu tượng.Abstract Class sẽ khai báo 1 hoặc nhiều method trừu tượng trong OOP. Có thể gồm method cụ thể hoặc method trừu tượng. Với Abstract Class 1 lớp thường sẽ là method trừu tượng.
++ Lớp con cụ thể hơn lớp cha, lớp cha "chung chung" hơn lớp con.
++ Trong kế thừa, càng lên cao thì tính cụ thể càng ít, tính trừu tượng càng tăng lên.
++ Những lớp có tính trừu tượng rất cao, đến mức không thể tạo được các đối tượng của lớp đó thì gọi là lớp trừu tượng.
+=> Phương thức : abstract void printStatus(); //khai báo phương thức với từ khoá abstract và không có thân pthuc.
+
+VD :
+ abstract class Bike{
+  abstract void run();
+}
+class Honda4 extends Bike{
+    void run() {
+        System.out.println("running safely..");
+    }
+
+    public static void main(String args[]) {
+        Bike obj = new Honda4();
+        obj.run();
+    }
+}  kqua : running safely..
+=> Bike là lớp trừu tượng chỉ chứa 1 phthuc trừu tượng là run. Được cung cấp bởi lớp Honda.
+* Khi nào sử dụng abstract class : khi 1 nhóm đối tượng có cùng bản chất kế thừa từ 1 class
+      Còn interface : khi 1 nhóm đối tượng không có cùng bản chất nhưng chúng có hành động giống nhau.
+* Các tính chất của lớp abstract class :
+   + không hỗ trợ đa kế thừa, không thể khởi tạo đối tượng.
+   + ko cho phép khai báo nội dung, nó chỉ định nghĩa tên, tham số đầu vào.
+   + Mức truy cập hàm của abstract class phải ở project hoặc public. Mục đích để lớp kế thừa
+     định nghĩa lại thuộc tính của lớp abstract class ko được khai báo.
+
+* Interface : là tập hợp các phương thức abstract(trừu tượng). Khi 1 lớp kế thừa interface, thì nó sẽ kế thừa
+	      những phthuc abstract của interface đó.
+* Các tính chất của Interface :
+   + Là 1 khuôn mẫu, ko phải là lớp đối tượng.
+   + Để khai báo interface, cần dùng từ khoá của interface thay cho các class.
+   + Tất cả hàm interface đều được ở dạng khai báo ko được định nghĩa.
+   + Interface là cấu trúc trong lập trình hướng đối tượng, cho phép các class được implements(đính kèm)
+   + Interface không thể khởi tạo.
+   + Pthuc có trong Interface bắt buộc phải là pthuc trừu tượng.
+   + Pthuc có trong Interface sẽ được định nghĩa với khả năng public, ko được định nghĩa nội dung.
+   + Một class có thể implements(đính kèm) được nhiều interface. Interface có thể thực hiện extends(kế thừa) với nhau.
+
+Khai báo : interface < tên interface > {
+		//khai báo các thành phần bên trong interface
+	   }
+VD :  public interface Flyable {
+	  String fly();
+	}
+      public class Bird implementsFlyable {
+	@Override
+	public String fly () {
+	    return "Flying with wings"
+	  }
+	}
+* Khi nào dùng abstract class và interface :
+  + Interface : 	Khi 1 class có thể thực hiện nhiều interface(tạm gọi là thừa kế)
+			Không thể định nghĩa code xử lý, chỉ có thể khai báo.
+			Mọi phương thức, property đều mặc định là public.
+			Mọi pthuc, property của interface cần được thực hiện trong class.
+			Không thể khởi tạo đối tượng.
+
+  + abstract class :   Không hỗ trợ đa thừa kế
+			Có thể định nghĩa hoặc không thân phương thức, property.
+			Có thể xác định modifier
+
+
+
