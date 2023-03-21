@@ -143,7 +143,8 @@ public class ComparatorExample {
 
     }
 }
-### 20 / 03 ###
+
+### 21 / 03 ###
 
 Comparable và Comparator : cả 2 đều là các giao diện và có thể sử dụng để sắp xếp các phần tử collection.
 			  đều dùng để so sánh giá trị và java dựa vào đó để scp tăng hay giảm dần.
@@ -237,7 +238,69 @@ Quy ước đặt tên : T - Type
 		 K - Key
 		 N - Number
 		 V - Vl
+Ưu điểm của Generics: + Kiểu đối tượng an toàn : chỉ có thể lưu 1 kiểu đối tượng duy nhất, ko cho
+			phép lưu trữ 2 đối tượng có 2 kiểu khác nhau.
+		     + Ko cần ép kiểu
+		     + Kiểm tra lúc biên dịch : nó kiểm tra lỗi khi biên dịch nên sẽ không bị lỗi lúc runtime
 
+* equals : dùng để so sánh hai đối tượng với nhau, trả về True nếu hai đối tượng bằng nhau và false nếu 2 đối tượng khác nhau.
+	+ được thiết kế để so sánh 2 đối tượng về mặt ngữ nghĩa (bằng cách so sánh các thành viên dữ liệu của lớp),
+	  trong khi toán tử == so sánh 2 đối tượng về mặt kỹ thuật (so sánh các tham chiếu của chúng)
+VD :
+   package vn.viettuts;
 
+public class EqualExample1 {
+    public static void main(String[] args) {
+        String s1 = new String("This is a string");
+        String s2 = new String("This is a string");
 
+        System.out.println("s1 == s2: " + (s1 == s2));
+        System.out.println("s1.equals(s2): " + (s1.equals(s2)));
+    }
+}
+kqua : s1 == s2 : false
+       s1.equals(s2) : true
+=> so sánh bằng (==) trả về false vì s1 và s2 là 2 đối tượng khác nhau được lưu ở các vị trí khác nhau trong bộ nhớ
+	so sánh equals trả về true bởi vì s1 và s2 có cùng giá trị ("Thí í a string") có thể coi là bằng nhau về ngữ nghĩa
+
+* hashcode : trả về là mã băm của địa chỉ, đối tượng có cùng địa chỉ thì mới có khả năng bằng nhau, còn nếu khác địa chỉ chắc chắn
+		là khác nhau.
+	    + Để định nghĩa 2 đối tượng bằng nhau ta phải định nghĩa lại hàm equals()
+cú pháp : public int hashCode()
+
+VD : // trả về giá trị hashcode cho đối tượng
+ public class Test{
+   public static void main(String args[]){
+      String Str = new String("Chao ban den voi Vietjack.com");
+      System.out.println("Hashcode cho Str la :" + Str.hashCode() );
+   }
+}
+kqua : Hashcode cho Str la : 699751477
+
+* Mối quan hệ giữa equals() và hashCode() 	:
+  Object class mặc định là cha của tất cả của các class, bên trong nó định nghĩa sẵn 2 method equals () và hashcode() -  nghĩa
+	là tất cả các class đều mặc định sẽ có 2 method này
+
+kqua : s1 == s2 : false
+       s1.equals(s2) : true
+=> so sánh bằng (==) trả về false vì s1 và s2 là 2 đối tượng khác nhau được lưu ở các vị trí khác nhau trong bộ nhớ
+	so sánh equals trả về true bởi vì s1 và s2 có cùng giá trị ("Thí í a string") có thể coi là bằng nhau về ngữ nghĩa
+
+* hashcode : trả về là mã băm của địa chỉ, đối tượng có cùng địa chỉ thì mới có khả năng bằng nhau, còn nếu khác địa chỉ chắc chắn 
+		là khác nhau.
+	    + Để định nghĩa 2 đối tượng bằng nhau ta phải định nghĩa lại hàm equals()
+cú pháp : public int hashCode()
+
+VD : // trả về giá trị hashcode cho đối tượng 
+ public class Test{
+   public static void main(String args[]){
+      String Str = new String("Chao ban den voi Vietjack.com");
+      System.out.println("Hashcode cho Str la :" + Str.hashCode() );
+   }
+}
+kqua : Hashcode cho Str la : 699751477
+
+* Mối quan hệ giữa equals() và hashCode() 	:
+  Object class mặc định là cha của tất cả của các class, bên trong nó định nghĩa sẵn 2 method equals () và hashcode() -  nghĩa
+	là tất cả các class đều mặc định sẽ có 2 method này
 
