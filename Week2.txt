@@ -218,6 +218,26 @@ public class ComparatorExample {
     }
 }
 
+* Genetics : là cách để xác định các điều kiện cụ thể cho lớp và phương thức trong ngữ cảnh khác nhau.
+VD : tạo lớp generic
+
+	package vn.viettuts.generics;
+	class MyGeneric<T> {
+		T obj;
+	   void add (T obj) {
+		this.obj = obj;
+	  }
+	  T get() {
+		return obj;
+	   }
+	}
+=> tham số <T> là kiểu chung, đại diện cho bất kì kiểu nào đó.
+Quy ước đặt tên : T - Type
+		 E - Element
+		 K - Key
+		 N - Number
+		 V - Vl
+
 
 
 
