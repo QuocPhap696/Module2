@@ -304,3 +304,26 @@ kqua : Hashcode cho Str la : 699751477
   Object class mặc định là cha của tất cả của các class, bên trong nó định nghĩa sẵn 2 method equals () và hashcode() -  nghĩa
 	là tất cả các class đều mặc định sẽ có 2 method này
 
+#### 22 / 03 ####
+* List : là một interface trong java. Nó chứa phương thức để chèn và xoá các phần tử dựa trên chỉ số index.
+Khai báo: public interface List <E> extends Collection <E>
+
+Các phương thức của interface List trong java :
+void add (int index, Object element)      : sử dụng để chèn các phần tử vào lit tại chỉ số index
+boolen addAll(int index, Collection C)    : sử dụng để chèn tất cả các yếu tố của c vào danh sách tại địa chỉ index.
+object get(int index)                     : sử dụng để trả về đối tượng được lưu tại chỉ số index trong list
+object set(int index, Object element)     : sử dụng để gán phần tử cho vị trí được chỉ được index trong list
+object remove(int index)                  : sử dụng để xoá các phần tử tại vị trí có chỉ số index và trả về phần tử đã xoá
+Listlterator listlterator()               : sử dụng để trả vể 1 Iterator mà bắt đầu từ phần tử đầu tiên của list
+Listlterator listlterator(int index)      : sử dụng để trả vể 1 Iterator mà bắt đầu từ chỉ số index đã chỉ định
+
+* LinkedList : là 1 lớp kế thừa AbstractSequentialList và triển khai List, ueue Interface trong Collections Framework nên
+                nó sẽ có một vài đặc điểm và phương thức tương đồng với List, Queue.
+
++ Lớp LinkedList trong java có thể chứa các phần tử trùng lặp.
++ Lớp LinkedList duy trì thứ tự của phần tử được thêm vào.
++ Lớp LinkedList là không đồng bộ (non-synchronized).
++ Trong java lớp LinkList, thao tác nhanh vì không cần phải dịch chuyển nếu bất kỳ phần tử nào bị xoá khỏi danh sách.
++ Lớp LinkedList trong java có thể được sử dụng như list (danh sách), stack (ngăn xếp) hoặc queue (hàng đợi).
+
+

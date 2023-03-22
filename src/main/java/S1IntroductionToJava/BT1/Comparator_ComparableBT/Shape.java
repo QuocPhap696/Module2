@@ -3,7 +3,7 @@ package S1IntroductionToJava.BT1.Comparator_ComparableBT;
 import java.util.Comparator;
 
 public class Shape {
-    private String color = "green";
+    public String color = "green";
     private boolean filled = true;
     public Shape() {
 
