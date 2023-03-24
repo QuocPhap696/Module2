@@ -1,11 +1,14 @@
 package S1IntroductionToJava.BT1.LinkedList;
 
-import javax.sound.midi.Soundbank;
+import S1IntroductionToJava.BT1.BTthayQuang.TrienKhaiLinkedList.MyLinkedListBTAP;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class LinkedList {
+    private static MyLinkedListBTAP nameSvList;
+
     public static void main(String[] args) {
         List<Integer> numberList = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
@@ -31,23 +34,32 @@ public class LinkedList {
         while (true) {
             System.out.println("1 . thêm sinh viên \n 2.Xoá sinh viên \n 3.Sua tên sinh vien \n  4.In ra danh sách \n 5.Quit");
             int selected = sc.nextInt();
+            sc.nextLine();
             if (selected == 5) {
                 break;
             }
-                switch (selected) {
-                    case 1:
+            switch (selected) {
+                case 1:
+                    String name = sc.nextLine();
+                    while (!name.isEmpty()) {
                         System.out.println("Nhập tên sinh viên");
-                        String name = sc.nextLine();
-                        nameSvList.add(name);
-                        break;
-                    case 2:
-                        break;
-                    case 3:
-                        break;
-                    case 4:
-                        break;
-                }
+
+                        newSvList.add(name);
+                    }
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    System.out.println("Danh sách sinh viên");
+                    for (String nameSv : newSvList) {
+                        System.out.println(nameSv);
+                    }
+                    break;
             }
+            System.out.println("END");
         }
     }
+
 }

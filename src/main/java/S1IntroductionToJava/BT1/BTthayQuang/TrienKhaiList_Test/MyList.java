@@ -1,4 +1,4 @@
-package S1IntroductionToJava.BT1.BTthayQuang.TrienKhaiList;
+package S1IntroductionToJava.BT1.BTthayQuang.TrienKhaiList_Test;
 
 import java.util.Arrays;
 

@@ -1,13 +1,14 @@
 package S1IntroductionToJava.BT1.BTthayQuang.TrienKhaiLinkedList;
 
-public class MyLinkedList {
+public class MyLinkedListBTAP {
     private Node head;
     private int numNodes;
 
-    public MyLinkedList(Object data) {
+    public MyLinkedListBTAP(Object data) {
         head = new Node(data);
         numNodes++;
     }
+
     public class Node {
         private Node next;
         private Object data;
@@ -15,12 +16,14 @@ public class MyLinkedList {
         public Node(Object data) {
             this.data = data;
         }
+
         public Object getData() {
             return this.data;
         }
     }
+
     //thêm phương thức add (thêm đối tượng vào vị trí index)
-    public void add (int index, Object data) {
+    public void add(int index, Object data) {
         Node temp = head;
         Node holder;
 
@@ -29,9 +32,9 @@ public class MyLinkedList {
         }
 
         holder = temp.next;
-            temp.next = new Node(data);
-            temp.next.next = holder;
-            numNodes++;
+        temp.next = new Node(data);
+        temp.next.next = holder;
+        numNodes++;
     }
 
     //thêm phương thức addFirst()
@@ -47,6 +50,32 @@ public class MyLinkedList {
         Node temp = head;
         for (int i = 0; i < index; i++) {
             temp = temp.next;
-        } return temp;
+        }
+        return temp;
+    }
+
+    // cài đặt phương thức printList
+    public void printList() {
+        Node temp = head;
+        while (temp != null) {
+            System.out.println(temp.data);
+            temp = temp.next;
+        }
+    }
+    // tạo lớp TestMyLinkedList chứa hàm main
+    // tạo đối tượng  thuộc lớp MyLinkedList
+    // gọi phương thức addFirts(), add(), printList()
+    public class TestMyLinkedList {
+        public static void main(String [] args) {
+            System.out.println("/=/=/=/= TESTING /=/=/=/=");
+            MyLinkedListBTAP ll = new MyLinkedListBTAP(10);
+            ll.addFirst(11);
+            ll.addFirst(12);
+            ll.addFirst(13);
+
+            ll.add(4,9);
+            ll.add(4,9);
+            ll.printList();
+        }
     }
 }

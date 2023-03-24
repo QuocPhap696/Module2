@@ -1,4 +1,4 @@
-package S1IntroductionToJava.BT1.BTthayQuang.TrienKhaiList;
+package S1IntroductionToJava.BT1.BTthayQuang.TrienKhaiList_Test;
 
 public class MyListTest {
     public static void main(String[] args) {
