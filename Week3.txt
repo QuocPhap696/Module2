@@ -1,0 +1,21 @@
+##### 18 / 03 #####
+ Stack : là lớp phụ của lớp Vector trong java mà triển khai 1 last-in-first-out(LIFO) stack.
+        (stack như một ngăn xếp thẳng đứng). chỉ định nghĩa constructor mặc định, mà tạo 1 stack trống.
+        + Lớp stack bao gồm tất cả phương thức được định nghĩa bởi lớp Vector, và 1 số phương thức khác của riêng nó.
+  - ngoài pthuc định nghĩa từ Vector lớp cha, lớp Stack định nghĩa các phương thức sau :
+   * boolean empty() : Kiểm tra nếu Stack này là trống. Trả về true nếu nó trống và false nếu stack chứa các phần tử
+   * Object peek()   : Trả về phần tử trên cùng của Stack, nhưng không gỡ bỏ nó
+   * Object pop()    : Trả về phần tử trên cùng của Stack, gỡ bỏ nó
+   * Object push(Object element) :Đẩy phần tử lên trên cùng của Stack. Cũng trả về phần tử đó
+   * int search(Object element) :Tìm kiếm phần tử trong Stack.
+                                 Nếu tìm thấy, offset của nó từ trên cùng của Stack được trả về. Nếu không, nó trả về -1
+
+ Queue : Sử dụng để lưu trũ các phần tử theo 1 thứ tự , tương tự như List nhưng cơ chế hoạt động của Queue
+         là First In First Out( phần tử nào được add đầu thì khi lấy ra thì được lấy đầu tiên ).
+  * Một số pthuc thường dùng được sử dụng của Queue :
+    + add() - Chèn phần tử đã chỉ định vào hàng đợi. Nếu tác vụ thành công, add() trả về true, nếu không nó sẽ ném ra một ngoại lệ.
+    + offer() - Chèn phần tử đã chỉ định vào hàng đợi. Nếu tác vụ thành công, offer() trả về true, nếu không nó sẽ trả về false.
+    + element() - Trả về phần đầu của hàng đợi. Ném một ngoại lệ nếu hàng đợi trống.
+    + peek() - Trả về đầu của hàng đợi. Trả về null nếu hàng đợi trống.
+    + remove() - Trả về và xóa phần đầu của hàng đợi. Ném một ngoại lệ nếu hàng đợi trống.
+    + poll() - Trả về và loại bỏ phần đầu của hàng đợi. Trả về null nếu hàng đợi trống.

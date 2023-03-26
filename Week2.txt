@@ -326,4 +326,5 @@ Listlterator listlterator(int index)      : sử dụng để trả vể 1 Itera
 + Trong java lớp LinkList, thao tác nhanh vì không cần phải dịch chuyển nếu bất kỳ phần tử nào bị xoá khỏi danh sách.
 + Lớp LinkedList trong java có thể được sử dụng như list (danh sách), stack (ngăn xếp) hoặc queue (hàng đợi).
 
+//////
 
