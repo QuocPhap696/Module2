@@ -1,5 +1,5 @@
 package S1IntroductionToJava.BT1.Queue;
-
+import java.util.Queue;
 public class MyLinkedListQueue {
     public Node head;
     public Node tail;
@@ -29,7 +29,7 @@ public class MyLinkedListQueue {
         return temp;
     }
 
-    //cd phương thức trong lớp MyLinkedListQueue
+//    cd phương thức trong lớp MyLinkedListQueue
   public void equeue(int key) {
         Node temp = new Node(key);
         if (this.tail == null) {
@@ -39,7 +39,7 @@ public class MyLinkedListQueue {
         this.tail.next = temp;
         this.tail = temp;
   }
-  public class LinkedListQueueClient {
+
       public static void main(String[] args) {
           MyLinkedListQueue queue = new MyLinkedListQueue();
           queue.enqueue(10);
@@ -53,4 +53,4 @@ public class MyLinkedListQueue {
 
       }
   }
-}
+
