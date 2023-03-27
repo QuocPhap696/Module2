@@ -29,6 +29,7 @@ public class StackDemo {
             stacksoDu.push(soDu + "");
             x = x/2;
         }
+        //đảo ngược lại
         System.out.println("Số nhị phân là :");
         int n = stacksoDu.size();
         for (int i = 0; i< n; i++) {
