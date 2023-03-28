@@ -175,7 +175,7 @@ VD:  package vn.viettuts.bienvadulieu;
 + Biến Local : được khai báo trong các phương thức, hàm constructor hoặc trong các block
 	        được tạo bên trong các phương thức, hàm constructor hoặc trong các block và bị huỷ khi kết thúc các pthuc
 		Không được sử dụng "access modifier" khi khai báo biến local.
-		Các biến local được lưu trên vùng nhớ stack của bộ nhớ.
+		Các biến local được lưu trên vùng nhớ MyStack của bộ nhớ.
 		Bạn cần khởi tạo giá trị mặc định cho biến local trước khi có thể sử dụng.
 vd: package vn.viettuts.bienvadulieu;
     public class Bien {

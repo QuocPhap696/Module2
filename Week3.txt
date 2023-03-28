@@ -1,9 +1,9 @@
 ##### 18 / 03 #####
- Stack : là lớp phụ của lớp Vector trong java mà triển khai 1 last-in-first-out(LIFO) stack.
-        (stack như một ngăn xếp thẳng đứng). chỉ định nghĩa constructor mặc định, mà tạo 1 stack trống.
-        + Lớp stack bao gồm tất cả phương thức được định nghĩa bởi lớp Vector, và 1 số phương thức khác của riêng nó.
+ Stack : là lớp phụ của lớp Vector trong java mà triển khai 1 last-in-first-out(LIFO) MyStack.
+        (MyStack như một ngăn xếp thẳng đứng). chỉ định nghĩa constructor mặc định, mà tạo 1 MyStack trống.
+        + Lớp MyStack bao gồm tất cả phương thức được định nghĩa bởi lớp Vector, và 1 số phương thức khác của riêng nó.
   - ngoài pthuc định nghĩa từ Vector lớp cha, lớp Stack định nghĩa các phương thức sau :
-   * boolean empty() : Kiểm tra nếu Stack này là trống. Trả về true nếu nó trống và false nếu stack chứa các phần tử
+   * boolean empty() : Kiểm tra nếu Stack này là trống. Trả về true nếu nó trống và false nếu MyStack chứa các phần tử
    * Object peek()   : Trả về phần tử trên cùng của Stack, nhưng không gỡ bỏ nó
    * Object pop()    : Trả về phần tử trên cùng của Stack, gỡ bỏ nó
    * Object push(Object element) :Đẩy phần tử lên trên cùng của Stack. Cũng trả về phần tử đó

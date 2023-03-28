@@ -23,6 +23,5 @@ public class ChuyenSangNhiPhan {
         for (int i = 0; i < du; i++) {
             System.out.print(stackNhiPhan.pop());
     }
-
     }
 }
