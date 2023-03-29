@@ -16,8 +16,8 @@ public class BookStore {
             books.add(book);
             books.add(new Book(2, "Doraemon", "Truyện con nít", new Date(), 50000.0d));
             books.add(new Book(3, "Kimi no Na wa", "Anime", new Date(), 150000.0d));
-            books.add(new Book(2, "HiHi", "Cười", new Date(), 30000));
-            books.add(new Book(2, "Chi rứa", "Giải trí", new Date(), 70000.0d));
+            books.add(new Book(4, "HiHi", "Cười", new Date(), 30000));
+            books.add(new Book(5, "Chi rứa", "Giải trí", new Date(), 70000.0d));
       }
 
       //hiển thị danh sách
@@ -115,7 +115,51 @@ public class BookStore {
                   System.out.println("Nhấn 7 Tìm kiếm sách theo tên");
                   System.out.println("Nhấn 8 Tìm kiếm sách hoặc theo mô tả");
                   int actionMenu = Integer.parseInt(scanner.nextLine());
+            switch (actionMenu) {
+                  case 1:
+                        bookStore.showBooks();
+                        break;
+                  case 2:
+                        bookStore.addBook();
+                        break;
+                  case 3 :
+                        bookStore.editBook();
+                        break;
+                  case 4:
+                        bookStore.deleteBook();
+                        break;
+                  case 5:
+                        bookStore.sortByPrice();
+                        break;
+                  case 6:
+                        bookStore.sortByName();
+                        break;
+                  case 7:
+                        bookStore.searchByName();
+                        break;
+                  case 8:
+
+                  default:
+                        System.out.println("Nhập sai rồi bae");
             }
+            boolean checkActionMenuContinue = true;
+            do {
+                  System.out.println("Bạn có muốn tiếp tục ? y/n");
+                  String actionMenuContinue = scanner.nextLine();
+                  switch (actionMenuContinue) {
+                        case "y" :
+                              checkActionMenu = true;
+                              checkActionMenuContinue = false;
+                              break;
+                        case "n" :
+                              checkActionMenu = false;
+                              checkActionMenuContinue = false;
+                              break;
+                        default:
+                              checkActionMenuContinue = true;
+                  }
+            }   while (checkActionMenuContinue);
+            }   while (checkActionMenu);
       }
 
       //tìm theo tên
