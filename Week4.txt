@@ -1,0 +1,55 @@
+03 / 04 / 2023
+Làm thế nào để Set/HashSet đảm bảo các phần tử không trùng lặp
+* Hashset trong java là một lớp kế thừa AbstractSet và triển khai của Set Interface
+    trong Collection Framework nên có vài đặc điểm và phương thức tương đồng với set
+    - kế thừa lớp AbstractSet và triển khai Interface.
+    + HashSet chỉ chứa các phần tử duy nhất.(ko chấp nhận 2 phần tử trùng nhau)
+    + Lưu trữ các phần tử bằng cách gọi là băm (hash table)
+    + Không đảm bảo thứ tự thêm vào
+    + Cho phép chứa phần tử Null.
+
+  * Khởi tạo HashSet :
+    HashSet<Integer> numbers = new HashSet<>(8, 0.75);
+ add ()
+ addAll()  : thêm phần tử vào Hashset
+
+ interator() : truy cập các phần tử của Hashset
+
+ remove()
+ removeAll() : xoá các phần tử trong Hashset
+
+ addAll() : lấy phần hợp của 2 set
+
+ retainAll() : lấy phần giao của 2 set
+
+ containsAll() : kiểm tra  1 set có phải tập con của set hay không
+
+ contains() : tìm kiếm phần tử đã chỉ định trong Hashset và trả về boolean.
+ isEmpty()  : kiểm tra xem HashSet có trống hay không.
+ size () : trả về kích thước
+ clear() : Loại bỏ tất cả phần tử khỏi Hashet.
+ clone() : tạo bản sao của HashSet
+
+* Set là 1 interface kế thừa Collection interface trong java. Set trong java là 1 Collection các
+    phần tử trùng lặp .
+    - triển khai bởi HashSet, LinkedHashSet, TreeSet, EnumSet.
+
+ Khai báo Interface Set trong java : public interface Set<E> extends Collection<E>
+* phương thức :
+boolean add (Object element)      : chèn các phần tử vào set
+boolean addAll (Collection c)     : chèn tất cả phần tử của c vào set
+void clear()                      : xoá tất cả các phần tử khỏi set
+boolean contains(Object element)  : trả true nếu tập hợp chứa phần tử đã chỉ định
+boolean containsALl(Collection c) : trả true nếu set chứa tất cả các phần tử của collection c đã định
+boolean equals (Object o )        : so sánh đối tượng chỉ định với set
+boolean isEmpty()                 : trả true nếu set ko chứa phần tử
+int hashCode()                    : trả về giá trị mã băm
+Iterator iterator()               : trả về vòng lặp iterator để duyệt qua các phần tử của set
+boolean remove(Object o)          : xoá phần tử đã chỉ định khỏi set
+boolean removeAll(Collection c)   : xoá khỏi set tất cả các phần tử của nó được chứa trong collection đã chỉ định
+boolean retainAll(Collection c)   : giữ lại các phần tử trong set được chứa trong collection c đã chỉ định
+int size()                        : trả về số lượng các phần tử của set
+Object[] toArray()                : trả về mảng chứa tất cả các phần tử trong set
+T[] toArray(T[]a)                 : trả về mảng chứa tất cả phần tử trong set, kiểu run-time của mảng trả về là kiểu đã chỉ định
+
+- Khai báo Set trong java : Set setA = new EnumSet()
