@@ -53,3 +53,10 @@ Object[] toArray()                : trả về mảng chứa tất cả các ph�
 T[] toArray(T[]a)                 : trả về mảng chứa tất cả phần tử trong set, kiểu run-time của mảng trả về là kiểu đã chỉ định
 
 - Khai báo Set trong java : Set setA = new EnumSet()
+
+* Mối quan hệ giữa equals() và hashCode() trong Java
+Equals : Object class mặc định là cha của tất cả class. bên trong định nghĩa sẵn 2 mdethod equals() và hashCode()
+(tất cả các class đều mặc định sẵn 2 method này).
+- theo nguyên tắc mà hashCode() đưa ra thì 2 Object bằng nhau thì phải có mã hashCode(),
+    khi override equals() method thì nhất định phải override hashCode()method.
+
