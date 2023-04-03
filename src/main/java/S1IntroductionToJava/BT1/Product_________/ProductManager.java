@@ -101,6 +101,7 @@ public class ProductManager {
         ProductManager productManager = new ProductManager();
         boolean checkActionMenu = false;
         do {
+            System.out.println("Menu Product");
             System.out.println("Nhấn 1 để xem sản phẩm");
             System.out.println("Nhấn 2 thêm sản phẩm");
             System.out.println("Nhấn 3 sửa  sản phẩm");
