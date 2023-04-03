@@ -60,3 +60,26 @@ Equals : Object class mặc định là cha của tất cả class. bên trong �
 - theo nguyên tắc mà hashCode() đưa ra thì 2 Object bằng nhau thì phải có mã hashCode(),
     khi override equals() method thì nhất định phải override hashCode()method.
 
+### 03 / 04 ###
+Kĩ thuật đặt tên biến : + sử dụng tên biến có ý nghĩa (mục đích và nội dung của biến )
+                        + độ dài tên biến phù hợp
+                        + định dạng chuẩn cho tên biến
+                        + tránh sử dụng tên biến trùng lặp(ko dùng tên biến giống nhau cho các biến khác nhau)
+                        + sử dụng từ viết tắt có ý nghĩa (đảm bảo rằng chúng ý nghĩa)
+
+Kĩ thuật đặt tên phương thức : + nên là  1 động từ hoặc bắt đầu từ 1 động từ
+                               + nên bắt đầu từ chữ thường
+                               + nên tuân theo quy tắc CamelCase
+
+Kĩ thuật tách biến (extract variable)  : + Nhận diện biểu thức cần tách
+                                         + Tạo biến tạm : tạo biến mới để lưu trữ giá trị của biếu thức đó.
+                                         + Thay thế biểu thức bằng biến tạm (thay thế biểu thức ban đầu bằng biến tạm vừa tạo )
+
+Kĩ thuật tách hằng (extract constant)  : + Nhận diện giá trị cần tách
+                                         + Tạo hằng (tạo hằng mới để lưu giá trị của biểu thức cần tách)
+                                         + Thay thế giá trị cố định bằng hằng (thay giá trị cố định bằng hằng vừa tạo)
+
+Kĩ thuật tách phương thức (extract method) : + chọn đoạn mã cần tách
+                                             + Tạo 1 phương thức mới (đặt tên phương thức cho dễ hiểu)
+                                             + Chuyển đoạn mã vào phương thức mới
+                                             + Thay thế đoạn mã cũ (thay bằng 1 phương thức mới)
