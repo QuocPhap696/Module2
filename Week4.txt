@@ -83,3 +83,32 @@ Kĩ thuật tách phương thức (extract method) : + chọn đoạn mã cần 
                                              + Tạo 1 phương thức mới (đặt tên phương thức cho dễ hiểu)
                                              + Chuyển đoạn mã vào phương thức mới
                                              + Thay thế đoạn mã cũ (thay bằng 1 phương thức mới)
+
+ ### 04 / 04 ###
+ 4 tính chất của OOP
+* Tính đóng gói(encapsulation) : là ko cho các truy cập từ code bên ngoài như thay đổi trạng thái hay nhìn trực tiếp
+                                + được thể hiện thông qua phạm vi truy cập (access modifier)
+                                + các lớp liên quan có thể gom chung lại thành package
+* Tính kế thừa  : + cho phép xây dựng lớp mới dựa trên định nghĩa của lớp đã có
+                  + Lớp đã có là Lớp Cha, lớp mới là lớp con (kế thừa tất cả các thành phần lớp cha, có thể chia sẻ hay mở rộng
+                                                        đặc tính sẵn mà ko cần định nghĩa lại)
+* Tính đa hình (polymorphism) : + là 1 tác vụ thực hiện theo nhiều cách khác nhau
+                                + thể hiện rõ nhất qua việc gọi phương thức đối tượng (pthuc có thể giống nhau nhưng xử lý luồn có thể khác nhau)
+                                + sử dụng overloading(nạp chồng phương thức) và overriding(ghi đè phương thức) để có tính đa hình.
+   -Overloading(nạp chồng) : + cho phép 1 lớp có nhiều thuộc tính, phương thức cùng tên nhưng với tham số khác nhau về loại cũng như số lượng
+                             + Khi gọi, phương thức tương ứng sẽ được thực hiện
+   -Overriding(ghi đè)     : + là phương thức cùng tên, tham số, kiểu trả về nhưng thằng con viết lại và dùng theo cách của nó,
+                                và xuất hiện lớp cha và tiếp tục xuất hiện lớp con
+* Tính trừu tượng (abstraction): + là 1 loại lớp trong OOP, khai báo 1 hoặc nhiều phương thức Abstract
+                                 + Lớp này có các Abstract class cũng như các phương thức cụ thể
+                                 + Một class bình thường ko thể có các Abstract
+                                 + Một Abstract có chứa ít nhất một phương thức abstract
+
+* SOLID : + Một class chỉ nên giữ 1 trách nhiệm duy nhất(chỉ sửa đổi class với 1 lý do duy nhất)
+          + Có thể mở rộng 1 class nhưng ko được sửa đổi bên trong class đó
+          + Các object của class con có thể thay thế class cha mà ko làm thay đổi tính đúng đắn của chương trình
+          + Thay vì dùng 1 interface lớn, ta nên tác thành nhiều interface nhỏ, với nhiều mục đích cụ thể
+          + Các module cấp cao ko nên phụ thuộc vào các modules cấp thấp (nên phụ thuộc vào abstraction)
+          + Interface ko nên phụ thuộc vào chi tiết và ngược lại
+          (các class giao tiếp với nhau thông qua interface, ko thông qua implementation)
+
