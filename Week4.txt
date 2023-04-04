@@ -105,6 +105,14 @@ Kĩ thuật tách phương thức (extract method) : + chọn đoạn mã cần 
                                  + Một Abstract có chứa ít nhất một phương thức abstract
 
 * SOLID : + Một class chỉ nên giữ 1 trách nhiệm duy nhất(chỉ sửa đổi class với 1 lý do duy nhất)
+            vd : public class ReportManager()
+                 {
+                    public void ReadDataFromDB();
+                    public void ProcessData();
+                    public void PrintReport();
+                 } //class này giữ tới 3 nhiệm vụ: Đọc dữ liệu từ DB, xử lý dữ liệu, in kết quả
+                   // theo đúng nguyên lý, phải tách clas này làm 3 class riêng
+
           + Có thể mở rộng 1 class nhưng ko được sửa đổi bên trong class đó
           + Các object của class con có thể thay thế class cha mà ko làm thay đổi tính đúng đắn của chương trình
           + Thay vì dùng 1 interface lớn, ta nên tác thành nhiều interface nhỏ, với nhiều mục đích cụ thể
