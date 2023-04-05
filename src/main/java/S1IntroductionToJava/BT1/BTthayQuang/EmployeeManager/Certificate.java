@@ -3,6 +3,7 @@ package S1IntroductionToJava.BT1.BTthayQuang.EmployeeManager;
 import java.util.Date;
 
 public class Certificate {
+    //tính đóng gói(private)
     private int CertificatedID;
     private String CertificateName;
     private String CertificateRank;

@@ -3,10 +3,10 @@ package S1IntroductionToJava.BT1.BTthayQuang.EmployeeManager;
 import java.util.Date;
 
 public class Experience extends  Employee {
+    //tính kế thừa (kế thừa lớp cha Employee, getter và setter)
     private int ExpInYear;
     private String ProSkill;
     public Experience() {
-
     }
 
     public Experience(int expInYear, String proSkill) {

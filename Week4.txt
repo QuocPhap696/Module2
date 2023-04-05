@@ -120,3 +120,80 @@ Kĩ thuật tách phương thức (extract method) : + chọn đoạn mã cần 
           + Interface ko nên phụ thuộc vào chi tiết và ngược lại
           (các class giao tiếp với nhau thông qua interface, ko thông qua implementation)
 
+### 05 / 04 ###
+Ngoại lệ (exception) : là sự kiện xảy ra trong quá trình thực thi chương trình và có thể làm gián đoạn luồng thực thi
+                        bình thường của chương trình
+                        + ngoại lệ có thể sinh ra bởi chính chương trình hoặc bởi các hàm, phương thức khác mà chương trình sử dụng
+
+* Try Catch : Khi chạy chương trình, có nhiều lỗi khác nhau (do người viết, thông tin đầu vào...) khi đó Java sẽ dừng
+                lại và hiển thị lỗi.
+              Try Catch có nhiệm vụ bắt(catch) các lỗi mà thực tế có thể xảy ra sao cho chương trình thân thiện với người dùng
+
+vd : try {
+         // Code có thể gây ra ngoại lệ
+     } catch (ExceptionType1 e1) {
+         // Xử lý ngoại lệ của loại 1
+     } catch (ExceptionType2 e2) {
+         // Xử lý ngoại lệ của loại 2
+     } finally {
+         // Code sẽ được thực thi sau khi try hoặc catch đã được xử lý xong
+     }
+
+* try-catch-finally : sẽ thực thi 3 trường hợp sau
+                    + Nếu exception (ngoại lệ) xảy ra bên trong tryblock thì luồng xử lý được chuyển tiếp cho catch block
+                      sau đó finally block và thực thi phần còn lại của method
+                    + Nếu ko có exception được ném ra bên trong try block. Khối lệnh catch sẽ được bỏ qua và tiến
+                      thẳng đến finally block sau đó thực thi phần còn lại method.
+                    + Nếu gặp lệnh return trong khối try hoặc catch thì finally block vẫn được thục thi.
+   => khối finally chắc chắn sẽ được thực thi dù chương trình chạy thành công hay có lỗi đi chăng nữa.
+
+vd : try-catch-finnaly
+    const numerator = 100, denominator = 'a';
+
+    try {
+         console.log(numerator/denominator);
+         console.log(a);
+    }
+    catch (error) {
+        console.log('Lỗi đã được bắt!');
+        console.log('Thông báo lỗi: ' + error);
+    }
+    finally {
+         console.log('Đoạn mã vẫn được thực thi!');
+    }
+ => Lỗi đã xảy ra và bị bắt bởi khối cactch, khối finally được thực thi trong mọi tình huống
+ *** Lưu ý *** : cần sử dụng câu lệnh catch hoặc finally sau câu lệnh try.
+                   nếu ko sẽ báo lỗi ' Uncaught SyntaxError: Missing catch or finally after try. '
+
+* throw : + để ném ra 1 ngoại lệ rõ ràng
+          + Ngoại lệ checked ko được truyền ra nếu chỉ sử dụng từ khoá throw
+          + Sau throw là 1 interfcae
+          + throw được sử dụng trong phương thức
+          + Ko thể throw nhiều exceptions
+
+* throws : + sử dụng để khai báo 1 ngoại lệ
+           + Ngoại lệ checked được truyền ra ngay cả khi chỉ sử dụng từ khoá throws
+           + Sau throws là 1 hoặc nhiều class
+           + Throws được khai báo ngay sau dấu đóng ngoặc đơn của phương thức
+           + Có thể khai báo exceptions . ví dụ : public void method () throws IOException, SQLExeption.
+
+-- throw ví dụ : public void validateAge(int age) {
+             if (age < 0 || age > 150) {
+                 throw new IllegalArgumentException("Invalid age: " + age);
+             }
+         }
+//nếu đối số age ko nằm trong khoảng 0 > 150 thì sẽ ném ra ngoại lệ 'IllegalArgumentException' + giá trị age
+=> throw giúp chúng ta kiểm soát và xử lí các tình huống bất thường trong chương trình 1 cách chính xác và đúng đắn
+
+--throws ví dụ :
+                public static int divide(int dividend, int divisor) throws ArithmeticException {
+                    if (divisor == 0) {
+                        throw new ArithmeticException("Cannot divide by zero");
+                    }
+                    return dividend / divisor;
+                }
+//phương thức 'divide' để thực hiện phép hai số nguyên và ném ra 1 ngoại lệ 'ArithmeticExeption' nếu số chia là 0
+
+
+
+

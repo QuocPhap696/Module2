@@ -3,6 +3,8 @@ package S1IntroductionToJava.BT1.BTthayQuang.EmployeeManager;
 import java.util.Date;
 
 public class Employee {
+    //tính đóng gói(private + cung cấp phương thức getter và
+    // setter là public để có thể sửa đổi và xem giá trị biến)
     private int ID;
     private String Fullname;
     private Date Birthday;
