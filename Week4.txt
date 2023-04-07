@@ -145,7 +145,10 @@ vd : try {
                     + Nếu ko có exception được ném ra bên trong try block. Khối lệnh catch sẽ được bỏ qua và tiến
                       thẳng đến finally block sau đó thực thi phần còn lại method.
                     + Nếu gặp lệnh return trong khối try hoặc catch thì finally block vẫn được thục thi.
+   => Khối try : khối lệnh có thể ném ngoại lệ
+   => khối catch : khối lệnh sẽ thực hiện nếu ngoại lệnh xảy ra
    => khối finally chắc chắn sẽ được thực thi dù chương trình chạy thành công hay có lỗi đi chăng nữa.
+            -- thằng finally có thể có hoặc ko cũng được
 
 vd : try-catch-finnaly
     const numerator = 100, denominator = 'a';
@@ -194,6 +197,138 @@ vd : try-catch-finnaly
                 }
 //phương thức 'divide' để thực hiện phép hai số nguyên và ném ra 1 ngoại lệ 'ArithmeticExeption' nếu số chia là 0
 
+### 06 / 04 ###
+* Làm việc với File : làm việc với file, tạo file, ghi dữ liệu ra file, xoá file
+    + Làm việc với File :để bắt đầu cần tạo 1 đối tượng File bằng khởi tạo với tham số đường dẫn
+      Một số phương thức lớp File : exists() kiểm tra xem file có tồn tại hay không
+                                  getName() lấy tên file (input-file.txt)
+                                  getParent() lấy đường dẫn thư mục của file
+                                  getPath() đường dẫn đầy đủ
+                                  isDirectory() kiểm tra xem là thư mục hay không
+                                  isFile() kiểm tra xem là file hay không
+                                  length() cỡ file (byte)
+                                  createNewFile() tạo ra file mới
+                                  delete() xóa file
+                                  list() lấy tên file, thư mục chứa trong đường dẫn
+                                  mkdir() tạo thư mục
+                                  renameTo(File dest) đổi tên file
+    + Tạo mới : Lớp Formatter có thể tạo file mới và dùng để viết nội dung vào file bằng phương thức
+          vd : try {
+                   Formatter f = new Formatter("C:\\sololearn\\test.txt");
+                   f.format("%s %s %s", "1","John", "Smith \r\n");
+                   f.close();
+               } catch (Exception e) {
+                   System.out.println("Error");
+               }
+    + Đọc nội dung file : Lớp Scanner kế thừa từ lớp Iterator được sử dụng để đọc nội dung file,
+                          Nếu đọc theo từng dòng dùng phương thức hasNextLine và nextLine kết kợp.
 
 
+* Lớp FileReader : sử dụng để đọc dữ liệu từ file, trả về dữ liệu theo dạng byte như lớp FileInputStream.
+     + Khai báo : Public class Filereader extends InputStreamReader.
+     + Các constructor : - FileReader(String File) : mở file  với tên file ở dạng string đã cho ở chế độ đọc,
+                                               Nếu tập tin ko tồn tại, ném ra ngoại lệ FileNotFoundException.
+                         - FileReader(File file)   : mở file với thể hiện của file đã cho ở chế độ đọc. Nếu tệp tin ko
+                                                tồn tại, ném ra ngoại lệ FileNotFoundException.
+     + Các phương thức : - int read() : Nó được sử dụng để trả về 1 ký tự trong mẫu, trả về -1 vào cuối tập tin.
+                         - void close() :sử dụng để đóng lớp FileReader.
 
+     ví dụ : đọc dữ liệu từ file testtout.txt sử dụng lớp Java FileReader
+             import java.io.FileReader;
+             public class FileReaderExample {
+                 public static void main(String args[]) throws Exception {
+                     FileReader fr = new FileReader("D:\\testout.txt");
+                     int i;
+                     while ((i = fr.read()) != -1) {
+                         System.out.print((char) i);
+                     }
+                     fr.close();
+                 }
+             }
+* Lớp FileWriter : sử dụng để ghi các dữ liệu theo định dạng ký tự vào 1 file
+                   + khi ghi dữ liệu ko cần phải chuyển đổi chuỗi thành mảng byte vì nó cung cấp phương thức để viết chuỗi trực tiếp
+    + Khai báo : public class FileWriter extends OutputStreamWriter
+    + Các construntor : - FileWriter(String file) : tạo ra file mới với giá trị truyền vào là tên file.
+                        - FileWriter(File file)   : tạo ra file mới với giá trị truyền vào là đối tượng file.
+    + Các phương thức : void write (String text)  : ghi String vào FileWriter
+                        void write(char c)        : ghi char vào FileWriter
+                        void write(char[] c)      : ghi mảng char vào FileWriter
+                        void flush()              : xả dữ liệu của FileWriter
+                        void close()              : đóng FileWriter
+    ví dụ : ghi dữ liệu vào file testout.txt bằng lớp Java FileWriter.
+
+            import java.io.FileWriter;
+            public class FileWriterExample {
+                public static void main(String args[]) {
+                    try {
+                        FileWriter fw = new FileWriter("D:\\testout.txt");
+                        fw.write("Welcome to java.");
+                        fw.close();
+                    } catch (Exception e) {
+                        System.out.println(e);
+                    }
+                    System.out.println("Success...");
+                }
+            }
+
+* Lớp BufferedWriter : sử dụng để cung cấp bộ đệm cho các thể hiện của lớp Writer.
+                     Giúp hiệu suất nhanh, nó kế thừa lớp Writer.
+    + Khai báo : public class BufferedWriter extends Writer
+    + Các constructor : - BufferdWriter(Writer wrt) : sử dụng để tạo ra thể hiện của BufferedWriter có sử dụng kích
+                           thước mặc định cho 1 bộ đệm đầu ra.
+                        - BufferedWriter(Writer wrt, int size) : sử dụng để tạo ra thể hiện của BufferedWriter mà sủ dụng
+                            kích thước quy định cho1 bộ đệm rầu ra.
+    + Các phương thức : void newLine()                            : thêm 1 dòng mới với dấu xuống dòng
+                        void write(int c)                         : ghi 1 ký tự duy nhất
+                        void write(char[] cbuf, int off, int len) : ghi 1 phần của 1 mảng các ký tự
+                        void write(String s, int off, int len)    : ghi 1 phần của 1 chuỗi
+                        void flush()                              : để xả BufferedWriter.
+                        void close()                              : để đóng BufferedWriter.
+    ví dụ : ghi dữ liệu vào file testout.txt bằng Java BufferedWriter
+            import java.io.BufferedWriter;
+            import java.io.FileWriter;
+            public class BufferedWriterExample {
+                public static void main(String[] args) throws Exception {
+                    FileWriter writer = new FileWriter("D:\\testout.txt");
+                    BufferedWriter buffer = new BufferedWriter(writer);
+                    buffer.write("Welcome to java.");
+                    buffer.close();
+                    System.out.println("Success...");
+                }
+            }
+* Lớp BufferedWriter : sử dụng để đọc văn bản từ 1 input stream dựa trên các ký tự (character stream).
+                Nó có thể được sử dụng để đọc dữ liệu theo dòng (line by line) bằng phương thức readLine().
+                Giúp hiệu suất nhanh, kế thừa lớp Reader.
+    + Khai báo : public class BufferedReader extends Reader
+    + Các constructor : - BufferedReader (Reader rd) : sử dụng để tạo ra thể hiện của BufferedReader mà sử dụng kích thước
+                                    mặc định cho bộ đệm đầu vào.
+                        - BufferedReader(Reader rd, int size) : sử dụng để tạo ra thể hiện của BufferedReader có sử dụng
+                                    kích thước quy định cho 1 bộ đệm đầu vào.
+    + Các phương thức : - int read()                              : sử dụng để đọc ký tự vật duy nhất.
+                        - int read(char[] cbuf, int off, int len) : sử dụng để đọc ký tự thành 1 phần của 1 mảng
+                        - boolean markSupported()                 : sử dụng để kiểm tra input stream có hỗ trợ các phương thức
+                                                                    mark() và reset() không.
+                        - String readLine()                       : sử dụng để đọc 1 dòng văn bản
+                        - boolean ready()                         : sử dụng để kiểm tra liệu các input stream đã sẵn sàng để được đọc
+                        - long skip(long n)                       : sử dụng để bỏ qua n ký tự.
+                        - void reset()                            : định vị lại stream tại vị trí mà phương thức đánh dấu lần cuối
+                                                                    được gọi vào input stream này.
+                        - void mark(int readAheadLimit)           : sử dụng để đánh dấu vị trí hiện tại trong 1 stream.
+                        - void close()                            : đóng các dòng đầu vào và giải phóng bất kỳ tài nguyên hệ thống nào
+                                                                    liên kết đến stream.
+    ví dụ : đọc dữ liệu từ file văn bản testout.txt sử dụng lớp Java BufferedReader.
+            import java.io.BufferedReader;
+            import java.io.FileReader;
+            public class BufferedReaderExample {
+                public static void main(String args[]) throws Exception {
+                    FileReader fr = new FileReader("D:\\testout.txt");
+                    BufferedReader br = new BufferedReader(fr);
+
+                    int i;
+                    while ((i = br.read()) != -1) {
+                        System.out.print((char) i);
+                    }
+                    br.close();
+                    fr.close();
+                }
+            }
