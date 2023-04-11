@@ -1,7 +1,5 @@
 package S1IntroductionToJava.BT1.BTthayQuang.EmployeeManager;
 
-import S1IntroductionToJava.BT1.BTthayQuang.BookBT.Book;
-
 import java.util.*;
 
 public class HihiCompany {

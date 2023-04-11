@@ -1,4 +1,4 @@
-package S1IntroductionToJava.BT1.BTthayQuang.BookBT;
+package S1IntroductionToJava.BT1.BTthayQuang.BookBT.Model;
 
 import java.util.Date;
 

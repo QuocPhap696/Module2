@@ -1,4 +1,6 @@
-package S1IntroductionToJava.BT1.BTthayQuang.BookBT;
+package S1IntroductionToJava.BT1.BTthayQuang.BookBT.Comparator;
+
+import S1IntroductionToJava.BT1.BTthayQuang.BookBT.Model.Book;
 
 import java.util.Comparator;
 
