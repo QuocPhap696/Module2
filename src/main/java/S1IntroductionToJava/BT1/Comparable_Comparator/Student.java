@@ -1,16 +1,27 @@
 package S1IntroductionToJava.BT1.Comparable_Comparator;
 
 public class Student implements Comparable<Student>{
-
-   private String name;
-   private Integer age;
+    private int id;
+    private String name;
+    private int age;
     private String address;
-    public Student(String name, Integer age, String address) {
+
+    public Student() {
+    }
+
+    public Student(int id, String name, int age, String address) {
+        this.id = id;
         this.name = name;
         this.age = age;
         this.address = address;
     }
-    public Student() {
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -21,11 +32,11 @@ public class Student implements Comparable<Student>{
         this.name = name;
     }
 
-    public Integer getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(Integer age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
@@ -38,9 +49,17 @@ public class Student implements Comparable<Student>{
     }
 
     @Override
+    public String toString() {
+        return
+                "id=" + id +
+                ", name=" + name  +
+                ", age=" + age +
+                ", address=" + address
+                ;
+    }
+
+    @Override
     public int compareTo(Student student) {
         return this.getName().compareTo(student.getName());
     }
-
-
 }

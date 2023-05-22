@@ -332,3 +332,24 @@ vd : try-catch-finnaly
                     fr.close();
                 }
             }
+
+### 11 / 04 ###
+* Multi-Tasking (đa nhiệm) : khả năng chạy đồng thời nhiều chương trình cùng một lúc trên hệ điều hành
+    vd : có thể bật nhiều chương trình như chrome, pp, intelji cùng 1 lúc .
+
+* Multi-Threading (đa luồng) : là khả năng thực hiện đồng thời nhiều tiểu trình trong một chươngtrình.
+    vd : Khi play nhạc, chúng ta vẫn có thể tương tác được với nút điều khiển như: Play, pause, next, back …
+            vì luồng phát nhạc là luồng riêng biệt với luồng tiếp nhận tương tác của người dùng.
+* Thread (luồng): là 1 tiến trình con (sub-process). Một đơn vị nhỏ nhất của máy tính có thể thực hiện 1 công việc riêng biệt.
+                + các luồng được quản lý bởi máy ảo Java (JVM).
+                + Một ứng dụng có thể chia nhỏ thành nhiều nhiệm vụ và mỗi nhiệm vụ có thể giao cho một thread.
+                + Nhiều thread cùng thực hiện đồng thời được gọi là đa luồng (Multi-Thread).
+* Có 2 cách tạo Thread :
+    c1 : Kế thừa từ lớp Thread có sẵn
+    c2 : Thực thi interface Runnable có sẵn
+
+
+* Đồng bộ (Synchronization) : là khả năng kiểm soát truy cập của nhiều luồng đến bất kì tài nguyên dùng chung (share resource) nào.
+   Đồng bộ hoá : là hành động giới hạn số luồng được phép truy cập tới 1 nguồn tài nguyên xuống còn 1 luồng tại bất kì thời điểm nào.
+   - Đồng bộ hoá sử dụng để : Tránh sự can thiệp của luồng khác.
+                              Đảm bảo nhất quán của chương trình.

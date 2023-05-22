@@ -17,9 +17,7 @@ public class LinkedList {
         for (int i = 0; i < n; i++) {
             numberList.add(sc.nextInt());
         }
-//        for (int i = 0; i< numberList.size(); i++) {
-//            System.out.print(numberList.get(i) + "");
-//        }
+
         List<Integer> newList = new ArrayList<>();
         for (int i = 0; i < numberList.size(); i++) {
             if (!newList.contains(numberList.get(i))) {
